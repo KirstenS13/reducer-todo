@@ -16,7 +16,7 @@ const TodoForm = (props) => {
     return (
         <div>
             <h2>This is the Form</h2>
-            <form>
+            <form onSubmit={submitForm}>
                 <label htmlFor="todo">Add a Todo</label>
                 <input
                     type="text"
@@ -26,7 +26,7 @@ const TodoForm = (props) => {
                     value={newItem}
                     onChange={handleChanges}
                 />
-                <button onClick={submitForm}>Add Todo</button>
+                <button>Add Todo</button>
             </form>
         </div>
     )

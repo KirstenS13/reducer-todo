@@ -8,12 +8,12 @@ const TodoList = (props) => {
     return (
         <div>
             <h3>This is the Todo List</h3>
-            {props.todos.map(todo => {
+            {props.todos.map((todo, i) => {
                 return (
                     <Todo 
                         dispatch={props.dispatch} 
                         key={todo.id} 
-                        id={todo.id} 
+                        i={i}
                         item={todo.item} 
                         completed={todo.completed}/>
                 )

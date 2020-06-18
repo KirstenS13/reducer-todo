@@ -5,9 +5,9 @@ const Todo = (props) => {
     console.log('props.completed in Todo', props.completed)
 
     const toggleCompleted = () => {
-        props.dispatch({type: 'TOGGLE_COMPLETED', payload: props.id});
+        props.dispatch({type: 'TOGGLE_COMPLETED', payload: props.i});
         console.log('TOGGLE_COMPLETED dispatch');
-        console.log('props.completed', props.completed)
+        console.log('props.completed', props.completed);
     }
 
     return (
