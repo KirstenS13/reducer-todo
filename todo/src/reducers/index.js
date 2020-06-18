@@ -1,8 +1,8 @@
 export const initialState = [
     {
-        item: "Sample todo",
+        item: "",
         completed: false,
-        id: 0
+        id: ""
     }
 ]
 
@@ -16,7 +16,22 @@ export const reducer = (state, action) => {
                     completed: false,
                     id: Date.now()
                 }
-            ])
+            ]);
+        case "TOGGLE_COMPLETED":
+            state.map(todoObj => {
+                if (action.payload === todoObj.id) {
+                    return ([
+                        ...state,
+                        {
+                            item: todoObj.item,
+                            completed: !todoObj.completed,
+                            id: todoObj.id
+                        }
+                    ])
+                } else {
+                    return state;
+                }
+            });
         default: 
             return state;
     }

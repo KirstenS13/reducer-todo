@@ -3,10 +3,14 @@ import React from 'react';
 const Todo = (props) => {
     console.log('Todo props', props);
 
+    const toggleCompleted = () => {
+        props.dispatch({type: 'TOGGLE_COMPLETED', payload: props.id});
+        console.log('here we go')
+    }
+
     return (
         <div>
-            <h4>This is the Todo Item</h4>
-            <p>{props.item}</p>
+            <p onClick={toggleCompleted}>{props.item}</p>
         </div>
     )
 }
