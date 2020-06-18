@@ -14,10 +14,9 @@ const TodoForm = (props) => {
     }
 
     return (
-        <div>
-            <h2>This is the Form</h2>
+        <div className="component">
             <form onSubmit={submitForm}>
-                <label htmlFor="todo">Add a Todo</label>
+                <label htmlFor="todo"><h2>Add a Todo</h2></label>
                 <input
                     type="text"
                     name="todo"

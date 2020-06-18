@@ -13,8 +13,10 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to the Todo App</h1>
-      <TodoForm dispatch={dispatch}/>
-      <TodoList dispatch={dispatch} todos={state.todos}/>
+      <div className="componentContainer">
+        <TodoForm dispatch={dispatch}/>
+        <TodoList dispatch={dispatch} todos={state.todos}/>
+      </div>
     </div>
   );
 }

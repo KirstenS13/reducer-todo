@@ -11,19 +11,24 @@ const TodoList = (props) => {
     }
 
     return (
-        <div>
-            <h3>This is the Todo List</h3>
+        <div className="component">
+            <div className="todoListHeader">
+                <h2>Your Todo List</h2>
+                <button onClick={clearCompleted}>Clear Completed</button>
+            </div>
+            <div className="todoListItems">
+                {props.todos.map((todo, i) => {
+                    return (
+                        <Todo 
+                            dispatch={props.dispatch} 
+                            key={todo.id} 
+                            i={i}
+                            item={todo.item} 
+                            completed={todo.completed}/>
+                    )
+                })}
+            </div>
             <button onClick={clearCompleted}>Clear Completed</button>
-            {props.todos.map((todo, i) => {
-                return (
-                    <Todo 
-                        dispatch={props.dispatch} 
-                        key={todo.id} 
-                        i={i}
-                        item={todo.item} 
-                        completed={todo.completed}/>
-                )
-            })}
         </div>
     )
 }
