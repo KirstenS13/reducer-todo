@@ -24,6 +24,10 @@ export const reducer = (state, action) => {
         case "TOGGLE_COMPLETED":
             return {
                 todos: state.todos.map((todo, i) => i === action.payload ? {...todo, completed: !todo.completed} : todo)
+            };
+        case "CLEAR_COMPLETED":
+            return {
+                todos: state.todos.filter(todo => todo.completed === false)
             }
         default: 
             return state;
