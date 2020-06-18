@@ -1,7 +1,11 @@
 export const initialState = {
-    item: "Sample todo",
-    completed: false,
-    id: 0
+    todos: [
+        {
+            item: "Sample todo",
+            completed: false,
+            id: 0
+        }
+    ]
 }
 
 export const reducer = (state, action) => {

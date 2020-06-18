@@ -1,11 +1,18 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = () => {
+const TodoList = (props) => {
+    console.log('props', props);
+    console.log('props.todos', props.todos);
+
     return (
         <div>
             <h3>This is the Todo List</h3>
-            <Todo />
+            {props.todos.map(todo => {
+                return (
+                    <Todo key={todo.id} item={todo.item} completed={todo.completed}/>
+                )
+            })}
         </div>
     )
 }
