@@ -8,13 +8,13 @@ import { reducer, initialState } from './reducers/index';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log('state', state);
+  console.log('state in App', state);
 
   return (
     <div className="App">
       <h1>Welcome to the Todo App</h1>
       <TodoForm dispatch={dispatch}/>
-      <TodoList dispatch={dispatch} todos={state}/>
+      <TodoList dispatch={dispatch} todos={state.todos}/>
     </div>
   );
 }

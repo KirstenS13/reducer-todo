@@ -2,15 +2,20 @@ import React from 'react';
 import Todo from './Todo';
 
 const TodoList = (props) => {
-    console.log('props', props);
-    console.log('props.todos', props.todos);
+    console.log('props in TodoList', props);
+    console.log('props.todos in TodoList', props.todos);
 
     return (
         <div>
             <h3>This is the Todo List</h3>
             {props.todos.map(todo => {
                 return (
-                    <Todo dispatch={props.dispatch} key={todo.id} id={todo.id} item={todo.item} completed={todo.completed}/>
+                    <Todo 
+                        dispatch={props.dispatch} 
+                        key={todo.id} 
+                        id={todo.id} 
+                        item={todo.item} 
+                        completed={todo.completed}/>
                 )
             })}
         </div>
